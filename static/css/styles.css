@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    font-size: 50px; /* Adjust size of the icon */
+    color: #4CAF50; /* Icon color */
+    text-decoration: none; /* Remove underline */
+}
+
+.back-button:hover {
+    color: #0056b3; /* Change color on hover */
+}
+
+body {
+    font-family: 'Pixel', monospace;
+    background-color: #ffffff; /* White background */
+    background-image: url("/static/images/background.webp");
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+}
+
+.controls {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.controls h2, .controls h3 {
+    text-align: center;
+}
+
+.controls form {
+    display: flex;
+    flex-direction: column;
+}
+
+.controls label {
+    margin-top: 10px;
+}
+
+.controls input {
+    padding: 8px;
+    margin-top: 5px;
+}
+
+.controls button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #45a049;
+}
+
+#itemList {
+    margin-top: 20px;
+}
+
+#itemList li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#itemList button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.bill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Add spacing between bill and buttons */
+}
+
+.bill {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, p {
+    text-align: center;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.bill-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.bill-table th, .bill-table td {
+    text-align: left;
+    padding: 8px;
+}
+
+.bill-table th {
+    border-bottom: 1px dashed #000;
+    font-weight: bold;
+}
+
+.bill-table td {
+    border-bottom: none;
+}
+
+.bill-table tfoot tr:first-child td {
+    border-top: 1px dashed #000;  /* Dashed line above "Total to Pay" */
+}
+
+.bill-table tfoot tr:last-child td {
+    border-bottom: 1px dashed #000;  /* Dashed line below "Total to Pay" */
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer hr {
+    border: none;
+    border-bottom: 1px dashed #000;
+    margin: 10px 0;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.download-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.download-buttons button {
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.download-buttons button:hover {
+    background-color: #45a049;
+}

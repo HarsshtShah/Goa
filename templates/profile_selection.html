@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Selection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile_selection.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Who are you?</h1>
+        <div class="profile-grid">
+            {% for profile in profiles %}
+            <div class="profile" data-profile="{{ profile.name }}">
+                <img src="{{ url_for('static', filename='images/' + profile.image) }}" alt="{{ profile.name }}" class="avatar {% if profile.role == 'admin' %} admin-avatar {% endif %}">
+                <p class="profile-name">{{ profile.name }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const profiles = document.querySelectorAll(".profile");
+
+            profiles.forEach(profile => {
+                profile.addEventListener("click", () => {
+                    const profileName = profile.dataset.profile;
+                    window.location.href = `/profile/${profileName}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

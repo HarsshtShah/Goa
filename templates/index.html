@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Bill Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="/" class="back-button">&#8592;</a> <!-- Left Arrow -->
+
+    <div class="container">
+        <!-- Left side: Form to add/remove items -->
+        <div class="controls">
+            <h2>Add Items</h2>
+            <form id="itemForm">
+                <label for="itemName">Item Name:</label>
+                <input type="text" id="itemName" placeholder="Enter item name" required>
+                
+                <label for="itemPrice">Amount:</label>
+                <input type="number" id="itemPrice" placeholder="Enter amount" required>
+                
+                <button type="submit">Add Item</button>
+            </form>
+
+            <h3>Items List</h3>
+            <ul id="itemList"></ul>
+        </div>
+
+        <!-- Right side: The Bill -->
+        <div class="bill-container">
+            <div class="bill" id="billContent">
+                <h1>The Goa Trip</h1>
+                <p><strong>It's really happening</strong></p>
+
+                <table class="bill-table" id="billTable">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="billItems">
+                        <!-- Dynamic items will appear here -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><strong>Total to Pay</strong></td>
+                            <td><strong id="total">0.00</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="footer">
+                    <p id="date"></p>
+                    <p>Creator: iMrShah</p>
+                    <hr>
+                    <p>Party Hard</p>
+                    <p>Or GO HOME</p>
+                </div>
+            </div>
+
+            <!-- Move buttons below the bill -->
+            <div class="download-buttons">
+                <button id="downloadPDF">Download PDF</button>
+                <button id="downloadJPEG">Download JPEG</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden field to store the profile name -->
+    <input type="hidden" id="profileName" value="{{ profile_name }}">
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Corrected script path -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
